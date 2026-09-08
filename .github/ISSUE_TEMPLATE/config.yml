@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💡 General Discussions & Questions
+    url: https://github.com/AlphaIsYour/03-enoapi-hub/discussions
+    about: Please ask questions and share ideas here before filing a generic issue!

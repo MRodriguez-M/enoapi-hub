@@ -12,7 +12,7 @@ export interface ApiSampleRequest {
 
 export interface ApiSampleResponse {
   status: number;
-  body: Record<string, unknown>;
+  body: Record<string, unknown> | Array<unknown>;
 }
 
 export interface ApiEntry {

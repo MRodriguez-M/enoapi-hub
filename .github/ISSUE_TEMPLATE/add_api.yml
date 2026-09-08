@@ -1,0 +1,78 @@
+name: 📝 Propose or Add a New Public API
+description: Suggest a new public API to be included in the Eno API Hub catalog
+title: "[API]: "
+labels: ["content", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting an API for Eno API Hub!
+        Please fill out the fields below so contributors can easily translate and add it to our catalog.
+  - type: input
+    id: api_name
+    attributes:
+      label: API Name
+      description: What is the official name of the API?
+      placeholder: e.g. OpenWeatherMap
+    validations:
+      required: true
+  - type: input
+    id: docs_url
+    attributes:
+      label: Official Documentation URL
+      description: Link to the API's documentation
+      placeholder: https://docs.example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category does this API best fit into?
+      options:
+        - AI & Machine Learning
+        - Finance & Payments
+        - Weather & Climate
+        - Geolocation & Maps
+        - Communication
+        - Productivity
+        - Image & Design
+        - Video & Media
+        - Education & Learning
+        - Security & Identity
+        - Crypto & Blockchain
+        - E-Commerce
+        - Data & Analytics
+        - Utilities & Tools
+    validations:
+      required: true
+  - type: dropdown
+    id: pricing
+    attributes:
+      label: Pricing Tier
+      options:
+        - Free (Completely free, no credit card)
+        - Freemium (Free tier available)
+        - Paid only
+    validations:
+      required: true
+  - type: dropdown
+    id: auth
+    attributes:
+      label: Authentication Method
+      options:
+        - None (No key needed)
+        - API Key
+        - Bearer Token
+        - OAuth 2.0
+        - Basic Auth
+    validations:
+      required: true
+  - type: textarea
+    id: translator_draft
+    attributes:
+      label: API Translator Notes (Plain Language)
+      description: In 2-3 simple sentences, what does this API do and what cool projects could someone build with it?
+      placeholder: "This API gives you... Developers can use it to build..."
+    validations:
+      required: true
