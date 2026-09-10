@@ -10,6 +10,14 @@ import {
 } from '@/lib/utils';
 import { Heart, ExternalLink, ArrowRight, Sparkles, Key } from 'lucide-react';
 
+const AUTH_TOOLTIP: Record<string, string> = {
+  "none": "No authentication required",
+  "api-key": "Requires an API Key in the headers",
+  "bearer": "Requires a Bearer Token",
+  "oauth2": "Uses OAuth 2.0 protocol",
+  "basic": "Requires HTTP Basic Auth credentials",
+};
+
 interface ApiCardProps {
   api: ApiEntry;
   isFavorite: boolean;
@@ -37,6 +45,7 @@ export function ApiCard({
               className={`rounded-full px-2 py-0.5 text-[11px] font-semibold capitalize ${getDifficultyColor(
                 api.difficulty
               )}`}
+              title="Placeholder difficulty tooltip"
             >
               {api.difficulty}
             </span>
@@ -98,7 +107,10 @@ export function ApiCard({
 
         {/* Auth & Tags */}
         <div className="flex flex-wrap items-center gap-1.5 mb-4">
-          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 rounded border border-zinc-200/60 dark:border-zinc-700/60">
+          <span 
+            title={AUTH_TOOLTIP[api.auth] || "Authentication method"}
+            className="inline-flex items-center gap-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/80 px-2 py-0.5 rounded border border-zinc-200/60 dark:border-zinc-700/60"
+          >
             <Key className="h-2.5 w-2.5" />
             <span>{getAuthLabel(api.auth)}</span>
           </span>
