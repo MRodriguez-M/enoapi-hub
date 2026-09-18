@@ -18,6 +18,12 @@ const AUTH_TOOLTIP: Record<string, string> = {
   "basic": "Requires HTTP Basic Auth credentials",
 };
 
+const DIFFICULTY_TOOLTIP: Record<string, string> = {
+  "easy": "Simple to integrate and use",
+  "moderate": "Moderate complexity, requires some setup",
+  "advanced": "Complex integration, significant development effort required"
+};
+
 interface ApiCardProps {
   api: ApiEntry;
   isFavorite: boolean;
@@ -45,7 +51,7 @@ export function ApiCard({
               className={`rounded-full px-2 py-0.5 text-[11px] font-semibold capitalize ${getDifficultyColor(
                 api.difficulty
               )}`}
-              title="Placeholder difficulty tooltip"
+              title={DIFFICULTY_TOOLTIP[api.difficulty] || "Difficulty level"}
             >
               {api.difficulty}
             </span>
